@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
+import * as React from "react";
+import { AppRegistry } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import TopBar from "../components/topBar";
 
-// Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-// Set the animation options. This is optional.
 SplashScreen.setOptions({
   duration: 1000,
   fade: true,
@@ -42,17 +44,8 @@ export default function Home() {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#fff",
-      }}
-      onLayout={onLayoutRootView}
-    >
-      <Text>SplashScreen Demo! 👋</Text>
-      <Entypo name="rocket" size={30} />
+    <View>
+      <TopBar />
     </View>
   );
 }
